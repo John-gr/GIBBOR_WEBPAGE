@@ -1,0 +1,147 @@
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  .hero {
+    min-height: auto;
+    padding: 48px 0;
+  }
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 113, 227, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    padding: 0 16px;
+    gap: 24px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.headline {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .headline {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 639px) {
+  .headline {
+    font-size: 32px;
+  }
+}
+
+.subheadline {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 639px) {
+  .subheadline {
+    font-size: 16px;
+  }
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+@media (max-width: 639px) {
+  .ctaContainer {
+    flex-direction: column;
+  }
+}
+
+.visualization {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+@media (max-width: 1024px) {
+  .visualization {
+    height: 300px;
+  }
+}
+
+@media (max-width: 639px) {
+  .visualization {
+    height: 250px;
+  }
+}
+
+.visualElement {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
