@@ -7,31 +7,31 @@ import { Grid, GridItem } from '../ui/Grid';
 export function TeamSection() {
   const teamMembers = [
     {
-      name: 'Jane Doe',
-      title: 'CEO & Co-founder',
-      bio: 'Legal tech innovator with 10+ years in evidence management.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jane',
+      name: 'Jonathan Gutierrez Reynoso',
+      title: 'Co-founder & Developer',
+      bio: 'Software Developer dedicated to tech for good with a passion for blockchain technology',
+      image: '/team/Jonathan.jpg',
     },
     {
-      name: 'John Smith',
-      title: 'CTO & Co-founder',
-      bio: 'Blockchain engineer, previously at major crypto infrastructure company.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=John',
+      name: 'Andrea Basurto Ocampo',
+      title: 'Co-founder & Concept Creator',
+      bio: 'Software developer driven by social impact and a deep commitment to improving access to justice.',
+      image: '/team/Andrea.jpg',
     },
     {
-      name: 'Sarah Johnson',
-      title: 'Head of Legal',
-      bio: 'Former prosecutor with expertise in digital evidence admissibility.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
+      name: 'David Eliaquim Díaz Hernández',
+      title: 'Co-founder & Full-Stack Engineer',
+      bio: 'Technical Architect with a background in blockchain and smart contract development.',
+      image: '/team/Eliaquim.jpg',
     },
   ];
 
   return (
     <Section id="team">
       <div className={styles.header}>
-        <Heading level={2}>Our Team</Heading>
+        <Heading level={2}>Gibborim</Heading>
         <Body size="lg" className={styles.subtitle}>
-          World-class experts in blockchain, legal systems, and security.
+          The Gibborim team is focused on blockchain, legal systems, and security.
         </Body>
       </div>
 

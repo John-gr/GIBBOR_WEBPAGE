@@ -8,7 +8,7 @@ export function Footer() {
         <div className={styles.content}>
           <div className={styles.section}>
             <h4 className={styles.sectionTitle}>GIBBOR</h4>
-            <Body size="sm" className={styles.sectionText}>
+            <Body size="sm" className={styles.link}>
               Immutable evidence on the public blockchain.
             </Body>
           </div>
@@ -30,22 +30,16 @@ export function Footer() {
 
           <div className={styles.section}>
             <h4 className={styles.sectionTitle}>Contact</h4>
-            <a href="mailto:info@gibbor.io" className={styles.link}>
-              info@gibbor.io
+            <a href="mailto:basurtoocampo.laura@gmail.com" className={styles.link}>
+              basurtoocampo.laura@gmail.com
             </a>
           </div>
 
           <div className={styles.section}>
             <h4 className={styles.sectionTitle}>Social</h4>
             <nav className={styles.links}>
-              <a href="#" className={styles.link} aria-label="Twitter">
-                Twitter
-              </a>
-              <a href="#" className={styles.link} aria-label="GitHub">
+              <a href="https://github.com/EliaquimI/GibborHackaton" className={styles.link} aria-label="GitHub">
                 GitHub
-              </a>
-              <a href="#" className={styles.link} aria-label="LinkedIn">
-                LinkedIn
               </a>
             </nav>
           </div>
