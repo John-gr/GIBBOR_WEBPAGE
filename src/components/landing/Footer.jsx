@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import { Body, Caption } from '../ui/Typography';
+import { navItems } from './navItems';
 
 export function Footer() {
+  const quickLinks = navItems.filter((item) => item.label !== 'Home');
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -16,15 +19,11 @@ export function Footer() {
           <div className={styles.section}>
             <h4 className={styles.sectionTitle}>Quick Links</h4>
             <nav className={styles.links}>
-              <a href="#overview" className={styles.link}>
-                About
-              </a>
-              <a href="#how-it-works" className={styles.link}>
-                How It Works
-              </a>
-              <a href="#team" className={styles.link}>
-                Team
-              </a>
+              {quickLinks.map((item) => (
+                <Link key={item.path} to={item.path} className={styles.link}>
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
