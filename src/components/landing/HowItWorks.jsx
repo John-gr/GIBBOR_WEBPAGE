@@ -7,46 +7,47 @@ export function HowItWorks() {
   const steps = [
     {
       number: 1,
-      title: 'Panic Button Triggered',
+      title: 'Press the Button',
       description:
-        'User activates GIBBOR during an incident. GPS coordinates and timestamp are captured immediately.',
-      icon: '📍',
+        'That\'s all the user does. One press activates GIBBOR. No unlocking, no menus, no typing.',
+      icon: '🔴',
     },
     {
       number: 2,
-      title: 'Recording Starts Automatically',
+      title: 'System Activates Automatically',
       description:
-        'Audio and video recording begin automatically. No action required from potentially endangered person.',
-      icon: '🎬',
+        'Exact GPS location is captured. Audio recording begins. Emergency contacts receive an alert. All in seconds.',
+      icon: '📡',
     },
     {
       number: 3,
-      title: 'Hash Computed',
+      title: 'Sealed Digital Proof Generated',
       description:
-        'When recording stops, the SHA-256 fingerprint (hash) of the file is calculated—a unique mathematical signature.',
+        'GIBBOR creates a tamper-evident digital record anchored to the blockchain. It cannot be altered, deleted, or disputed.',
       icon: '🔐',
     },
+  ];
+
+  const tiers = [
     {
-      number: 4,
-      title: 'Anchored on Blockchain',
-      description:
-        'GPS, timestamp, and hash are written to the Stellar blockchain via smart contract in under 30 seconds.',
-      icon: '⛓️',
+      name: 'Base',
+      features: ['Emergency button', 'Automatic recording', 'Sealed evidence'],
     },
     {
-      number: 5,
-      title: 'Queryable by Authorities',
-      description:
-        'Law enforcement, lawyers, or judges query the incident via GoldSky. On-chain timestamps and hashes are instantly verifiable.',
-      icon: '🔍',
+      name: 'Standard',
+      features: ['Everything in Base', 'Emergency contact alerts', 'Incident history'],
     },
     {
-      number: 6,
-      title: 'Tamper-Proof Verification',
-      description:
-        'Run the same SHA-256 function on the file. If the hash matches what is on-chain, file is provably unaltered. If not, tampering is proven.',
-      icon: '✅',
+      name: 'Premium',
+      features: ['Everything in Standard', 'Real-time safe routes', 'Priority response'],
     },
+  ];
+
+  const marketStats = [
+    { value: '$23B', label: 'Travel insurance market size' },
+    { value: '18%', label: 'Annual market growth rate' },
+    { value: '$8B', label: 'Travel security apps by 2033' },
+    { value: '$240K', label: 'ARR from a 5,000-user pilot at $4/user/month' },
   ];
 
   return (
@@ -54,7 +55,7 @@ export function HowItWorks() {
       <div className={styles.header}>
         <Heading level={2}>How It Works</Heading>
         <Body size="lg" className={styles.subtitle}>
-          From incident to immutable record in minutes—not days or months.
+          The user doesn't need to know anything about technology. Just press — GIBBOR does the rest.
         </Body>
       </div>
 
@@ -77,51 +78,38 @@ export function HowItWorks() {
       </div>
 
       <div className={styles.workflowDiagram}>
-        <Heading level={3} className={styles.diagramTitle}>Evidence Flow</Heading>
+        <Heading level={3} className={styles.diagramTitle}>Service Tiers</Heading>
+        <Body size="sm" className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          Margin is in the monthly license — not the hardware. $4 per active user per month, 65–70% gross margin.
+        </Body>
         <div className={styles.diagram}>
-          <div className={styles.box}>
-            <div className={styles.boxLabel}>User Phone</div>
-            <div className={styles.boxContent}>Video File</div>
-          </div>
-          <div className={styles.arrow}>→</div>
-          <div className={styles.box}>
-            <div className={styles.boxLabel}>Hash Computed</div>
-            <div className={styles.boxContent}>SHA-256</div>
-          </div>
-          <div className={styles.arrow}>→</div>
-          <div className={styles.box}>
-            <div className={styles.boxLabel}>Stellar Blockchain</div>
-            <div className={styles.boxContent}>Immutable Record</div>
-          </div>
-          <div className={styles.arrow}>→</div>
-          <div className={styles.box}>
-            <div className={styles.boxLabel}>Queryable API</div>
-            <div className={styles.boxContent}>GoldSky</div>
-          </div>
+          {tiers.map((tier, idx) => (
+            <div key={idx} className={styles.box}>
+              <div className={styles.boxLabel}>{tier.name}</div>
+              {tier.features.map((f, i) => (
+                <div key={i} className={styles.boxContent}>{f}</div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
       <div className={styles.keyPoints}>
-        <div className={styles.keyPoint}>
-          <div className={styles.keyIcon}>🔒</div>
-          <h4>File Privacy</h4>
-          <p>Video stays on device. Only hash goes on-chain.</p>
-        </div>
-        <div className={styles.keyPoint}>
-          <div className={styles.keyIcon}>⏱️</div>
-          <h4>Speed</h4>
-          <p>From incident to blockchain in under 30 seconds.</p>
-        </div>
-        <div className={styles.keyPoint}>
-          <div className={styles.keyIcon}>💰</div>
-          <h4>Low Cost</h4>
-          <p>Blockchain transaction costs fractions of a cent.</p>
-        </div>
-        <div className={styles.keyPoint}>
-          <div className={styles.keyIcon}>👥</div>
-          <h4>No Crypto Knowledge</h4>
-          <p>Users sign in with email—complexity abstracted.</p>
-        </div>
+        {marketStats.map((stat, idx) => (
+          <div key={idx} className={styles.keyPoint}>
+            <div className={styles.keyIcon} style={{ fontSize: '1.5rem', fontWeight: 700 }}>{stat.value}</div>
+            <p>{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.header} style={{ marginTop: '3rem' }}>
+        <Heading level={3}>Our Target Partners</Heading>
+        <Body size="lg" className={styles.subtitle}>
+          We go to market through companies that already have traveling customers — starting with
+          premium bank cards. They already offer VIP lounges, medical assistance, and baggage
+          insurance. GIBBOR is the next natural benefit.
+        </Body>
       </div>
     </Section>
   );

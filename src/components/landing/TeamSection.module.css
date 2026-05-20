@@ -1,42 +1,26 @@
 .header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
-@media (max-width: 639px) {
-  .header {
-    margin-bottom: 32px;
-  }
-}
-
-.header h2 {
-  margin: 0 0 16px 0;
-}
+@media (max-width: 639px) { .header { margin-bottom: 36px; } }
 
 .subtitle {
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-@media (max-width: 639px) {
-  .subtitle {
-    font-size: 16px;
-  }
+  color: rgba(245, 240, 232, 0.60);
+  max-width: 540px;
+  margin: 12px auto 0;
 }
 
 .teamCard {
-  background-color: var(--color-neutral-0);
-  border: 1px solid var(--color-border-light);
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: all 200ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 .teamCard:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 6px rgba(0, 113, 227, 0.1);
+  border-color: rgba(255, 31, 142, 0.45);
+  box-shadow: 0 0 32px rgba(255, 31, 142, 0.12), 0 12px 40px rgba(0,0,0,0.4);
   transform: translateY(-4px);
 }
 
@@ -45,48 +29,42 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
-  border: 3px solid var(--color-primary);
   object-fit: cover;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    0 0 0 2px #FF1F8E,
+    0 0 20px rgba(255, 31, 142, 0.3);
   margin-bottom: 8px;
 }
 
-@media (max-width: 639px) {
-  .avatar {
-    width: 80px;
-    height: 80px;
-  }
-}
+@media (max-width: 639px) { .avatar { width: 80px; height: 80px; } }
 
 .name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: #F5F0E8;
   margin: 0;
-}
-
-@media (max-width: 639px) {
-  .name {
-    font-size: 16px;
-  }
 }
 
 .title {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--color-primary);
+  color: #00CFFF;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .bio {
-  color: var(--color-text-secondary);
+  color: rgba(245, 240, 232, 0.58);
+  font-size: 13px;
+  line-height: 1.6;
   margin: 0;
-  line-height: 1.5;
 }

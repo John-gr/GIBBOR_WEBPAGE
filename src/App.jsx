@@ -4,6 +4,7 @@ import { Footer } from './components/landing/Footer'
 import { Layout } from './components/landing/Layout'
 import { HomePage } from './pages/HomePage'
 import { HowItWorksPage } from './pages/HowItWorksPage'
+import { WhatsNextPage } from './pages/WhatsNextPage'
 import { TeamPage } from './pages/TeamPage'
 import { AboutPage } from './pages/AboutPage'
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/whats-next" element={<WhatsNextPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>

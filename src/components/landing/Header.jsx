@@ -13,8 +13,9 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link to="/" className={styles.logoText}>
-            GIBBOR
+          <Link to="/" className={styles.logoLink}>
+            <img src="/GIBBOR_LogoSimplificado.jpeg" alt="GIBBOR" className={styles.logoImg} />
+            <span className={styles.logoName}>GIBBOR</span>
           </Link>
         </div>
 

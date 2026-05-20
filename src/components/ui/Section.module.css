@@ -1,17 +1,17 @@
 .section {
   width: 100%;
-  background-color: var(--color-neutral-0);
+  background-color: transparent;
 }
 
 .padded {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 @media (max-width: 639px) {
   .padded {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 

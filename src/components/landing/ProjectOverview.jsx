@@ -5,34 +5,39 @@ import { Card, CardContent } from '../ui/Card';
 import { Grid, GridItem } from '../ui/Grid';
 
 export function ProjectOverview() {
-  const technologies = [
+  const stats = [
     {
-      name: 'Stellar + Soroban',
-      description:
-        'A public, permission-less blockchain that finalizes transactions in 3-5 seconds, storing incident data and evidence hashes with cryptographic permanence.',
+      value: '18%',
+      label: 'of travelers experience an incident during their trip',
     },
     {
-      name: 'GoldSky Indexing',
-      description:
-        'Indexes Stellar smart contract events in real time, exposing blockchain data as queryable SQL APIs for law enforcement and legal professionals.',
+      value: '3×',
+      label: 'higher robbery rate for tourists compared to locals',
     },
     {
-      name: 'SHA-256 Hashing',
-      description:
-        'Video files stay on the phone. Only the 64-character cryptographic fingerprint goes on-chain—creating mathematical proof of file integrity.',
+      value: '$23B',
+      label: 'travel insurance market — and standard policies don\'t cover active security incidents',
     },
     {
-      name: 'Crossmint Wallet',
-      description:
-        'Abstracts blockchain complexity. Users sign in with institutional email. Crossmint manages the wallet invisibly—no seed phrases needed.',
+      value: '0',
+      label: 'seconds to react when it happens — no time to unlock a phone and document the scene',
     },
   ];
 
-  const benefits = [
-    { title: 'Immutable Proof', description: 'Incident data locked on public blockchain' },
-    { title: 'Legal Weight', description: 'Timestamps cannot be disputed or altered' },
-    { title: 'Tamper-Evident', description: 'Hash comparison proves file authenticity' },
-    { title: 'Privacy First', description: 'Evidence stays on device by default' },
+  const gaps = [
+    'Video on a phone — easily deleted or contested',
+    'Witness testimony — unreliable and hard to verify',
+    'Cloud backup — alterable after the fact',
+    'Insurance claims — rejected without solid evidence',
+    'Police reports — filed with no corroborating proof',
+  ];
+
+  const solution = [
+    'Exact GPS location recorded automatically',
+    'Audio captured from the moment of activation',
+    'Sealed digital proof — tamper-evident, legally admissible',
+    'No technical knowledge required — one button does everything',
+    'Families and emergency contacts notified in real time',
   ];
 
   return (
@@ -40,21 +45,32 @@ export function ProjectOverview() {
       <div className={styles.header}>
         <Heading level={2}>The Problem We Solve</Heading>
         <Body size="lg" className={styles.subtitle}>
-          Digital evidence can be lost, altered, or dismissed. Courts lack a chain of custody
-          that most digital evidence simply cannot provide.
+          Millions of travelers face security risks every year. When an incident
+          happens, they have seconds to react — and no way to prove what occurred.
         </Body>
       </div>
 
-      <div className={styles.problemSolution}>
+      <Grid cols={2} gap={6}>
+        {stats.map((stat, idx) => (
+          <GridItem key={idx}>
+            <Card className={styles.techCard}>
+              <CardContent>
+                <h3 className={styles.techName}>{stat.value}</h3>
+                <Body size="sm">{stat.label}</Body>
+              </CardContent>
+            </Card>
+          </GridItem>
+        ))}
+      </Grid>
+
+      <div className={styles.problemSolution} style={{ marginTop: '3rem' }}>
         <Card className={styles.card}>
           <CardContent>
-            <h3 className={styles.cardTitle}>What Exists Today</h3>
+            <h3 className={styles.cardTitle}>The Gap Today</h3>
             <ul className={styles.list}>
-              <li>Video on a phone</li>
-              <li>Witness testimony</li>
-              <li>Cloud backup (alterable)</li>
-              <li>Crypto wallets (complex)</li>
-              <li>Raw blockchain data (unreadable)</li>
+              {gaps.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </CardContent>
         </Card>
@@ -65,51 +81,21 @@ export function ProjectOverview() {
           <CardContent>
             <h3 className={styles.cardTitle}>GIBBOR Adds</h3>
             <ul className={styles.list}>
-              <li>Video + immutable proof of origin</li>
-              <li>Blockchain timestamp with legal weight</li>
-              <li>On-chain hash—tamper-evident</li>
-              <li>One-click access via email</li>
-              <li>Queryable incident registry</li>
+              {solution.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </CardContent>
         </Card>
       </div>
 
-      <div className={styles.techSection}>
-        <Heading level={3} className={styles.techTitle}>Why Each Technology Exists</Heading>
-
-        <Grid cols={2} gap={6}>
-          {technologies.map((tech, idx) => (
-            <GridItem key={idx}>
-              <Card className={styles.techCard}>
-                <CardContent>
-                  <h4 className={styles.techName}>{tech.name}</h4>
-                  <Body size="sm">{tech.description}</Body>
-                </CardContent>
-              </Card>
-            </GridItem>
-          ))}
-        </Grid>
-      </div>
-
       <div className={styles.benefitsSection}>
-        <Heading level={3} className={styles.benefitsTitle}>Key Benefits</Heading>
-
-        <Grid cols={2} gap={6}>
-          {benefits.map((benefit, idx) => (
-            <GridItem key={idx}>
-              <div className={styles.benefit}>
-                <div className={styles.benefitIcon}>✓</div>
-                <div>
-                  <h4 className={styles.benefitTitle}>{benefit.title}</h4>
-                  <Body size="sm" className={styles.benefitDescription}>
-                    {benefit.description}
-                  </Body>
-                </div>
-              </div>
-            </GridItem>
-          ))}
-        </Grid>
+        <Heading level={3} className={styles.benefitsTitle}>The traveler is not alone anymore.</Heading>
+        <Body size="lg" className={styles.subtitle}>
+          GIBBOR generates sealed, tamper-proof evidence in seconds. Evidence that
+          cannot be altered, dismissed, or ignored — by insurance companies, police,
+          or courts.
+        </Body>
       </div>
     </Section>
   );

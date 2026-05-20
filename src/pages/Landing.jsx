@@ -3,6 +3,7 @@ import { Layout } from '../components/landing/Layout';
 import { HeroSection } from '../components/landing/HeroSection';
 import { ProjectOverview } from '../components/landing/ProjectOverview';
 import { HowItWorks } from '../components/landing/HowItWorks';
+import { WhatsNext } from '../components/landing/WhatsNext';
 import { TeamSection } from '../components/landing/TeamSection';
 import { Footer } from '../components/landing/Footer';
 
@@ -14,6 +15,7 @@ export function Landing() {
         <HeroSection />
         <ProjectOverview />
         <HowItWorks />
+        <WhatsNext />
         <TeamSection />
       </main>
       <Footer />
